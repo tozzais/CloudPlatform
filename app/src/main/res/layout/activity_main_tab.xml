@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/ll_main"
+    android:background="@color/gray_bg"
+
+    >
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        />
+
+    <View
+        style="@style/line_light"
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/ll_home"
+            style="@style/HomeTab">
+
+            <ImageView
+                android:id="@+id/iv_home"
+                style="@style/HomeTabImageStyle"
+                android:src="@mipmap/home_selete" />
+            <TextView
+                android:id="@+id/tv_home"
+                style="@style/MainTextStyle"
+                android:text="首页"
+                android:textColor="@color/baseColor"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_category"
+            style="@style/HomeTab">
+
+            <ImageView
+                android:id="@+id/iv_category"
+                style="@style/HomeTabImageStyle"
+                android:src="@mipmap/category" />
+
+            <TextView
+                android:id="@+id/tv_category"
+                style="@style/MainTextStyle"
+                android:text="分类"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_community"
+            style="@style/HomeTab">
+
+            <ImageView
+                android:id="@+id/iv_community"
+                style="@style/HomeTabImageStyle"
+                android:src="@mipmap/integral_shop" />
+            <TextView
+                android:id="@+id/tv_community"
+                style="@style/MainTextStyle"
+                android:text="商家"
+
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_cart"
+            style="@style/HomeTab"
+            android:paddingTop="0dp"
+            >
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="30dp">
+                <ImageView
+                    android:id="@+id/iv_cart"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentBottom="true"
+                    style="@style/HomeTabImageStyle"
+                    android:src="@mipmap/cart" />
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/tv_cart_number"
+                    app:rv_backgroundPressColor="@color/red"
+                    app:rv_backgroundColor="@color/red"
+                    app:rv_isRadiusHalfHeight="true"
+                    style="@style/cart_number_style"
+                    android:text="3"
+                    android:visibility="gone"
+                    />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tv_cart"
+                style="@style/MainTextStyle"
+                android:text="购物车"
+                 />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_mine"
+            style="@style/HomeTab">
+
+            <ImageView
+                android:id="@+id/iv_mine"
+                style="@style/HomeTabImageStyle"
+                android:src="@mipmap/mine" />
+
+            <TextView
+                android:id="@+id/tv_mine"
+                style="@style/MainTextStyle"
+                android:text="我"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

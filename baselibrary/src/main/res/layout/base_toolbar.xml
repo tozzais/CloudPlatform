@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:padding="12dp"
-        style="@style/base_click_style1"
+        style="@style/click_toolbar_style"
         />
 
     <TextView
@@ -43,7 +43,7 @@
         android:visibility="gone"
         android:padding="12dp"
         android:textSize="14sp"
-        style="@style/Widget.AppCompat.Toolbar.Button.Navigation"
+        style="@style/click_toolbar_style"
         />
 
 

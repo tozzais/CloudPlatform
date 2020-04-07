@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.JsonSyntaxException;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.tozzais.baselibrary.R;
 import com.tozzais.baselibrary.util.NetworkUtil;
 
@@ -26,7 +26,7 @@ import retrofit2.adapter.rxjava.HttpException;
  * Created by Administrator on 2017/4/19.
  */
 
-public abstract class BaseListFragment<T> extends BaseFragment {
+public abstract class BaseList1Fragment<T> extends BaseFragment {
 
 
     protected BaseQuickAdapter mAdapter;
@@ -35,7 +35,7 @@ public abstract class BaseListFragment<T> extends BaseFragment {
     protected int PageSize = 10;
 
     public RecyclerView mRecyclerView;
-    public SwipeRefreshLayout swipeLayout;
+    public SmartRefreshLayout swipeLayout;
     @Override
     public void initView(Bundle savedInstanceState) {
         mRecyclerView = mRootView.findViewById(R.id.rv_list);
@@ -45,7 +45,7 @@ public abstract class BaseListFragment<T> extends BaseFragment {
 
     @Override
     public int setLayout() {
-        return R.layout.base_fragment_recycleview;
+        return R.layout.base_fragment_recycleview1;
     }
 
 
@@ -59,7 +59,7 @@ public abstract class BaseListFragment<T> extends BaseFragment {
     @Override
     public void initListener() {
         //刷新
-        swipeLayout.setOnRefreshListener(this::onRefresh);
+        swipeLayout.setOnRefreshListener(refreshLayout -> onRefresh());
         //加载更多
         mAdapter.getLoadMoreModule().setOnLoadMoreListener(() -> {
             loadData();
@@ -137,7 +137,7 @@ public abstract class BaseListFragment<T> extends BaseFragment {
      */
     public void onErrorResult(Throwable e) {
         if (swipeLayout != null)
-            swipeLayout.setRefreshing(false);
+            swipeLayout.finishRefresh();
         String s = "";
         if (page != DEFAULT_PAGE) {
             mAdapter.getLoadMoreModule().loadMoreFail();
@@ -164,7 +164,7 @@ public abstract class BaseListFragment<T> extends BaseFragment {
     //返回数据 code不等于500的
     public void onErrorResult(String s) {
         if (swipeLayout != null)
-            swipeLayout.setRefreshing(false);
+            swipeLayout.finishRefresh();
         if (page != DEFAULT_PAGE) {
             mAdapter.getLoadMoreModule().loadMoreFail();
             return;
@@ -188,7 +188,7 @@ public abstract class BaseListFragment<T> extends BaseFragment {
         isLoad = true;
         super.showContent();
         if (swipeLayout != null)
-            swipeLayout.setRefreshing(false);
+            swipeLayout.finishRefresh();
 
     }
 

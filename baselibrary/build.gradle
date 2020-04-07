@@ -50,14 +50,16 @@ dependencies {
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.1'
     //网络请求
     //retrofit2
-    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
-    implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
-    implementation 'io.reactivex:rxandroid:1.2.1'
-    implementation 'io.reactivex:rxjava:1.2.9'
-    implementation 'com.squareup.okhttp3:okhttp:4.0.1'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.0.1'
+    api 'com.squareup.retrofit2:retrofit:2.6.1'
+    api 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    api 'com.squareup.retrofit2:converter-gson:2.6.1'
+    api 'io.reactivex:rxandroid:1.2.1'
+    api 'io.reactivex:rxjava:1.2.9'
+    api 'com.squareup.okhttp3:okhttp:4.0.1'
+    api 'com.squareup.okhttp3:logging-interceptor:4.0.1'
     //购物车数量组件
     api 'com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar'
+    //下拉刷新
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'  //1.0.5及以前版本的老用户升级需谨慎，API改动过大
 
 }
